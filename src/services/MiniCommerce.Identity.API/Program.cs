@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MiniCommerce.Identity.API.Endpoints;
+using MiniCommerce.Identity.API.Entities;
 using MiniCommerce.Identity.API.Options;
 using MiniCommerce.Identity.API.Persistence;
 
@@ -19,6 +22,8 @@ builder.Services.AddDbContext<IdentityDbContext>(options =>
     options.UseNpgsql(connectionString);
 });
 
+builder.Services.AddScoped<PasswordHasher<User>>();
+
 var app = builder.Build();
 
 app.MapGet("/health", () => Results.Ok(new
@@ -27,5 +32,7 @@ app.MapGet("/health", () => Results.Ok(new
     status = "Healthy",
     timestamp = DateTimeOffset.UtcNow
 }));
+
+app.MapAuthEndpoints();
 
 app.Run();

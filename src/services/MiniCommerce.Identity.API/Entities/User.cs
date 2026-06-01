@@ -16,13 +16,27 @@ public sealed class User
     {
     }
 
-    public User(string email, string passwordHash, string fullName)
+    private User(string email, string fullName)
     {
         Id = Guid.NewGuid();
         Email = NormalizeEmail(email);
-        PasswordHash = passwordHash;
         FullName = fullName.Trim();
         CreatedAt = DateTimeOffset.UtcNow;
+    }
+
+    public static User Create(string email, string fullName)
+    {
+        return new User(email, fullName);
+    }
+
+    public void SetPasswordHash(string passwordHash)
+    {
+        if (string.IsNullOrWhiteSpace(passwordHash))
+        {
+            throw new ArgumentException("Password hash cannot be empty.", nameof(passwordHash));
+        }
+
+        PasswordHash = passwordHash;
     }
 
     public static string NormalizeEmail(string email)
