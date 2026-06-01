@@ -1,0 +1,81 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: minicommv2.rabbitmq
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  catalogdb:
+    image: mongo:7
+    container_name: minicommv2.catalogdb
+    ports:
+      - "27031:27017"
+    volumes:
+      - catalogdb_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  basketdb:
+    image: redis:7-alpine
+    container_name: minicommv2.basketdb
+    ports:
+      - "6380:6379"
+    volumes:
+      - basketdb_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  identitydb:
+    image: postgres:16-alpine
+    container_name: minicommv2.identitydb
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: identitydb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: Password123
+    volumes:
+      - identitydb_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d identitydb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  orderdb:
+    image: postgres:16-alpine
+    container_name: minicommv2.orderdb
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: Password123
+    volumes:
+      - orderdb_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d orderdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  catalogdb_data:
+  basketdb_data:
+  identitydb_data:
+  orderdb_data:
