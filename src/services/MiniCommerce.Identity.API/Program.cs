@@ -4,6 +4,7 @@ using MiniCommerce.Identity.API.Endpoints;
 using MiniCommerce.Identity.API.Entities;
 using MiniCommerce.Identity.API.Options;
 using MiniCommerce.Identity.API.Persistence;
+using MiniCommerce.Identity.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,7 @@ builder.Services.AddDbContext<IdentityDbContext>(options =>
 });
 
 builder.Services.AddScoped<PasswordHasher<User>>();
+builder.Services.AddScoped<JwtTokenService>();
 
 var app = builder.Build();
 
