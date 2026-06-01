@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5711E56F-ED35-474B-A875-61E058858E8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Identity.API", "src\services\MiniCommerce.Identity.API\MiniCommerce.Identity.API.csproj", "{311B3876-1F35-4FB5-8A78-184E06DE587F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Catalog.API", "src\services\MiniCommerce.Catalog.API\MiniCommerce.Catalog.API.csproj", "{C1D4E128-E089-47B4-BB6D-421E60108A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Basket.API", "src\services\MiniCommerce.Basket.API\MiniCommerce.Basket.API.csproj", "{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Ordering.API", "src\services\MiniCommerce.Ordering.API\MiniCommerce.Ordering.API.csproj", "{9482A943-6761-4803-A9CD-00A814E19907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Gateway.API", "src\services\MiniCommerce.Gateway.API\MiniCommerce.Gateway.API.csproj", "{971C01E4-9F04-4D31-BAA9-607F3DCCD302}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{5C282EC9-9440-47AB-A45C-B2B8D2E70C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCommerce.Shared", "src\shared\MiniCommerce.Shared\MiniCommerce.Shared.csproj", "{B3D99885-01A4-4ACC-8480-4CFE841F71A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{311B3876-1F35-4FB5-8A78-184E06DE587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311B3876-1F35-4FB5-8A78-184E06DE587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311B3876-1F35-4FB5-8A78-184E06DE587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311B3876-1F35-4FB5-8A78-184E06DE587F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D4E128-E089-47B4-BB6D-421E60108A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D4E128-E089-47B4-BB6D-421E60108A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D4E128-E089-47B4-BB6D-421E60108A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D4E128-E089-47B4-BB6D-421E60108A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9482A943-6761-4803-A9CD-00A814E19907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9482A943-6761-4803-A9CD-00A814E19907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9482A943-6761-4803-A9CD-00A814E19907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9482A943-6761-4803-A9CD-00A814E19907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{971C01E4-9F04-4D31-BAA9-607F3DCCD302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971C01E4-9F04-4D31-BAA9-607F3DCCD302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{971C01E4-9F04-4D31-BAA9-607F3DCCD302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971C01E4-9F04-4D31-BAA9-607F3DCCD302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D99885-01A4-4ACC-8480-4CFE841F71A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D99885-01A4-4ACC-8480-4CFE841F71A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D99885-01A4-4ACC-8480-4CFE841F71A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D99885-01A4-4ACC-8480-4CFE841F71A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5} = {5711E56F-ED35-474B-A875-61E058858E8D}
+		{311B3876-1F35-4FB5-8A78-184E06DE587F} = {3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}
+		{C1D4E128-E089-47B4-BB6D-421E60108A21} = {3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}
+		{C4CCFA54-EC92-4D58-8B47-676DC04FCF1A} = {3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}
+		{9482A943-6761-4803-A9CD-00A814E19907} = {3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}
+		{971C01E4-9F04-4D31-BAA9-607F3DCCD302} = {3FAEB109-85E1-40A7-9EEC-DBBE8F04A2E5}
+		{5C282EC9-9440-47AB-A45C-B2B8D2E70C5A} = {5711E56F-ED35-474B-A875-61E058858E8D}
+		{B3D99885-01A4-4ACC-8480-4CFE841F71A7} = {5C282EC9-9440-47AB-A45C-B2B8D2E70C5A}
+	EndGlobalSection
+EndGlobal
